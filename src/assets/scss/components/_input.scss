@@ -1,0 +1,37 @@
+@import "../helper/mixin/";
+@import "../helper/variables/";
+
+body{
+.input-group        { padding: 9px 0; border-radius: 4px; border: 1px solid $neutral-70; .input-group-text { background: transparent; border: 0; padding: 0 0 0 10px; } 
+.form-control       { border: none; padding: 0 8px; background-color: transparent; color: $neutral-50; @include font-size(14, 24, 400); letter-spacing: 0.175px; &:focus { background-color: transparent;} }}
+
+input:disabled{background-color: $neutral-100 !important;border-color: $neutral-70 !important;color: $neutral-50 !important; ~ label{color: $neutral-50 !important;}&:not(:placeholder-shown) ~ label::after{background-color: transparent !important;}}
+.form-floating      {
+input{height: 52px !important;min-height:  52px !important;}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none;-moz-appearance: none;appearance: none;}
+label             {color: $neutral-50;@include font-size(14, 24, 400);margin-bottom: 2px;padding-top:12px !important;}
+
+.password-eyeIcon   { @include position-absolute(50%, null, 10px, null);transform: translateY(-50%); width: 35px; height: 35px; border-radius: 100%;transition: all 0.3s ease-in-out;background:transparent;@include flex(center,center,null);&:hover{background-color: $primary;img{filter: brightness(0) invert(1);}}}
+
+.form-control      { border: 1px solid $neutral-70; color: $neutral-10; @include font-size(14, 24, 400); border-radius: 4px;
+&:focus            { box-shadow: none; border-color: $primary; } 
+&:not(:placeholder-shown)~label::after{background: $white;}} 
+
+.form-control:focus ~ label { color: $primary !important; }
+
+@include media-max("md") {
+input.form-control {height: 50px !important;min-height: 50px !important;font-size: 14px;}
+label{font-size: 13px;padding-top: 12px !important;}
+textarea{height: 100px !important;}}}
+
+.checkbox-w        { cursor: pointer; @include flex(center, null, null);
+  &.medium{input[type="checkbox"] {@include box(18px,18px);&:checked{&:before{right: 5px; top: 6px;}}}}
+  &.large{input[type="checkbox"] {@include box(20px,20px);&:disabled{background-color: $primary-70 !important;border-color: $primary-70 !important; ~ label{color: $primary !important;}}&:checked{&:before{right: 6px; top: 7px;}}}}
+input[type="checkbox"] { position: relative; border: 2px solid $neutral-30; border-radius: 3px; cursor: pointer; margin-right: 12px; outline: 0; vertical-align: text-top; -webkit-appearance: none; 
+  &:checked          { background-color: $primary !important;border-color: $primary !important;
+  &:before           { content: ""; position: absolute;  width: 7px; height: 11px; border: solid $white; border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-50%, -50%); z-index: 2; } } 
+}
+label              { cursor: pointer; color: $black-30; @include font-size(14, 20, 400); margin-bottom: 0;}
+@include media-max("md") {
+input[type="checkbox"]  {@include box(18px,18px);margin-right: 8px;&:checked {&::before{right: 5px;top: 6px;}}}
+label              { font-size: 14px;}}}}

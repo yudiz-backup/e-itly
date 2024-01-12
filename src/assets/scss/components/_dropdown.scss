@@ -1,0 +1,8 @@
+.custom-dropdown,
+.dropdown-menu              {border: none !important; filter: drop-shadow(0px 2px 6px $black-5);
+&::before                   { content: ""; position: absolute; top: -7px; right: 14px; width: 20.513px; height: 20.513px; transform: rotate(-135deg); background: $white;}}
+.custom-dropdown            { width: 260px; border-radius: 4px; background: $white;  padding: 8px 0; transition: all 0.3s; right: 75px; position: absolute; z-index: 1; margin-top: 10px;
+
+.dropdown-item              { color: $neutral-30; @include font-size(14, 20, 400); letter-spacing: 0.175px; padding: 8px 24px; transition: all 0.3s; position: relative; span    {   margin-right: 16px; }
+&.active,&:active,&:hover   { background-color: $primary !important; color: $white !important; img{ @include iconWhite();}}}
+}

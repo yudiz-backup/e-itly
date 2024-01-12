@@ -1,0 +1,158 @@
+/* =======================
+  @Mixin
+  =======================*/
+
+  @mixin position-absolute($top: null, $left: null, $right: null, $bottom: null) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+  }
+  @mixin iconWhite {
+    filter: brightness(0) invert(1);
+  }
+  // @include iconWhite()
+  // @include position-absolute(0%, 0%, 0%, 0%);
+  
+  @mixin flex($items, $justify, $direction) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: $items;
+    justify-content: $justify;
+    flex-direction: $direction;
+  }
+  
+  // @include flex(center, center, null);
+  
+  @mixin Transition($time) {
+    transition: all $time ease;
+    -moz-transition: all $time ease;
+    -webkit-transition: all $time ease;
+    -ms-transition: all $time ease;
+    -o-transition: all $time ease;
+  }
+  
+  // @include Transition(0.3s);
+  
+  // background image
+  @mixin bgImage($image) {
+    background: url($image) no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  // @include bgImage("/images/1.jpg");
+  
+  // @include padding(2px 4px 6px 8px);
+  
+  @mixin input-placeholder {
+    &.placeholder {
+      @content;
+    }
+  
+    &:-moz-placeholder {
+      @content;
+    }
+  
+    &::-moz-placeholder {
+      @content;
+    }
+  
+    &:-ms-input-placeholder {
+      @content;
+    }
+  
+    &::-webkit-input-placeholder {
+      @content;
+    }
+  }
+  
+  // @include input-placeholder {color: red;}
+  
+  // box
+  @mixin box($width, $height: $width) {
+    width: $width;
+    height: $height;
+  }
+  // @include box ()
+  
+  // key Frames
+  @mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+      @content;
+    }
+  
+    @-moz-keyframes #{$animation-name} {
+      @content;
+    }
+  
+    @-ms-keyframes #{$animation-name} {
+      @content;
+    }
+  
+    @-o-keyframes #{$animation-name} {
+      @content;
+    }
+  
+    @keyframes #{$animation-name} {
+      @content;
+    }
+  }
+  
+  // @include keyframes(background) {
+  //   0% {
+  //     background: white;
+  //   }
+  //   50% {
+  //     background: lightblue;
+  //   }
+  //   100% {
+  //     background: royalblue;
+  //   }
+  // }
+  
+  @mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+  }
+  
+  //  @include animation("all 3s 3");
+  
+  @mixin font-size($font-size, $line-height: normal, $font-weight: normal) {
+    font-size: $font-size * 1px;
+  
+    // font-size: $font-size * 0.1rem;
+    // example using rem values and 62.5% font-size so 1rem = 10px
+  
+    @if $line-height==normal {
+      line-height: normal;
+    } @else {
+      line-height: #{$line-height}px;
+    }
+  
+    @if $font-weight==normal {
+      font-weight: normal;
+    } @else {
+      font-weight: #{$font-weight};
+    }
+  }
+  
+  // @include font-size(12, 18, 900);
+  
+  // Clearfix
+  @mixin clearfix {
+    &:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  }
+  
+  //   @include clearfix;

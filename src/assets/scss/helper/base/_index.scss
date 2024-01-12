@@ -1,0 +1,603 @@
+@import "../mixin";
+@import "../variables";
+
+::selection {
+  background-color: $primary;
+  color: $white;
+}
+
+:root {
+  scroll-behavior: initial;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
+body {
+  overflow-x: hidden;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: $theme-font !important;
+  color: $neutral-30;
+  -webkit-text-size-adjust: none;
+  font-display: swap;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  ul,
+  ol {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 0 !important;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  a:focus,
+  a:active,
+  a:visited,
+  a:hover {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none !important;
+  }
+
+  button,
+  button:focus,
+  input,
+  input:focus {
+    box-shadow: none !important;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  .invalid-feedback {
+    display: block;
+    @include font-size(14, 24, 400);
+    color: $danger;
+  }
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 100% !important;
+  transition: all 0.3s;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $primary;
+    color: $white;
+
+    img {
+      @include iconWhite()
+    }
+  }
+}
+
+.sidebar-btn {
+  background-color: $primary;
+}
+
+// pagination
+.pagination {
+  gap: 10px;
+
+  .page-item {
+    &.disabled {
+      .page-link {
+        background-color: $primary-20;
+        color: $white;
+        opacity: 0.5;
+      }
+    }
+
+    .page-link {
+      background-color: transparent;
+      border: none;
+      color: $neutral-40;
+      @include font-size(14, 20, 400);
+      border-radius: 4px !important;
+      letter-spacing: 0.175px;
+    }
+
+    &.active {
+      .page-link {
+        background-color: $primary-20;
+        color: $white;
+      }
+    }
+  }
+}
+
+.offcanvas-backdrop {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.60);
+}
+
+.bg-wrapper {
+  border-radius: 8px;
+  background: $neutral-90;
+  padding: 20px;
+}
+
+.page-size-dropdown {
+  @include flex(center, null, null);
+  gap: 10px;
+}
+
+.custom-pagination {
+  @include flex(center, space-between, null);
+}
+
+.custom-pagination,
+.par-page-dropdown {
+  span {
+    color: $black-30;
+    letter-spacing: 0.175px;
+    @include font-size(14, 20, 400);
+  }
+
+  .page-size-dropdown .page {
+    color: $neutral-65;
+  }
+
+  .btn {
+    background-color: transparent !important;
+    border: none;
+    color: $neutral-30 !important;
+    padding: 0;
+    font-weight: 400;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      @include bgImage("/src/assets/images/icons/arrow-drop-down.svg");
+      border: none;
+      @include box(10px, 10px);
+      background-size: contain;
+      vertical-align: 0;
+      margin-left: 5px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: $neutral-30;
+    }
+  }
+
+  .dropdown-menu {
+    width: 50px;
+    min-width: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid $primary !important;
+    background: $white;
+    box-shadow: $shadow;
+
+    &::before {
+      display: none;
+    }
+
+    .dropdown-item {
+      padding: 5px 13px;
+      transition: all 0.3s;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $blue-10;
+        font-size: 14px;
+      }
+
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+}
+
+.select {
+  .css-1nmdiq5-menu {
+    z-index: 9;
+  }
+
+  .drop-icon {
+    width: 13px;
+    height: auto;
+  }
+
+  .form-control {
+    div {
+      padding-left: 0;
+      color: $neutral-50;
+      @include font-size(14, 24, 400);
+    }
+
+    &-active {
+      box-shadow: none;
+      border-color: $primary;
+    }
+  }
+
+  .react-menu-list {
+    padding: 0;
+
+    div {
+      background-color: transparent;
+      color: $neutral-30;
+      padding: 10px 12px;
+      border: none;
+      @include font-size(14, 24, 400);
+
+      &.focus-item {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+}
+
+.status-menu-list {
+  div {
+    text-transform: capitalize;
+    color: $neutral-50;
+    @include font-size(14, 24, 400);
+  }
+}
+
+.status-option {
+  width: 150px;
+  cursor: pointer;
+
+  .css-cw9bsi-Input2 {
+    color: $neutral-50;
+  }
+
+  .drp-status {
+    &__indicators {
+      display: none;
+    }
+
+    &__control {
+      background-color: transparent
+    }
+  }
+
+  .css-art2ul-ValueContainer2 {
+    padding: 0;
+  }
+
+  .css-4xgw5l-IndicatorsContainer2 {
+    background-color: transparent;
+
+    .css-15lsz6c-indicatorContainer,
+    .css-1xc3v61-indicatorContainer {
+      img {
+        @include box(10px, 10px);
+      }
+
+      cursor: pointer;
+    }
+  }
+
+  .status-item {
+    padding: 0;
+    border: none !important;
+    box-shadow: none;
+    text-transform: capitalize;
+  }
+
+  .css-1nmdiq5-menu {
+    overflow: hidden;
+    border-radius: 8px;
+  }
+}
+
+.dnd-wrapper-header {
+  .heading-small {
+    color: $neutral-30;
+  }
+}
+
+
+
+.chips-spacing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  overflow-y: auto;
+}
+
+// Version
+
+.version {
+  width: fit-content;
+  margin-left: auto;
+  margin-bottom: 24px;
+
+  .btn {
+    text-decoration-line: underline;
+    text-transform: capitalize;
+  }
+
+  .dropdown-menu {
+    padding: 16px;
+    margin-top: 10px;
+    inset: 0 0 auto -180px !important;
+
+    .form-group {
+      position: relative;
+      @include flex(center, null, null);
+      gap: 15px;
+
+      &:first-child {
+        margin-bottom: 18px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid $neutral-100;
+      }
+
+      label {
+        cursor: pointer;
+
+        span {
+          color: $neutral-10;
+          @include font-size(15, 20, 400);
+          letter-spacing: 0.175px;
+          display: block;
+        }
+
+        p {
+          margin-top: 5px;
+          color: $neutral-70;
+          @include font-size(14, 16, 700);
+          letter-spacing: 0.048px;
+
+          span {
+            color: $black-30;
+            display: inline-block;
+          }
+        }
+
+        &:before {
+          width: 18px;
+          height: 18px;
+          position: absolute;
+          top: 1px;
+          left: 0;
+          content: "";
+          display: inline-block;
+          -moz-border-radius: 50px;
+          -webkit-border-radius: 50px;
+          border-radius: 50px;
+          border: 1.5px solid $neutral-30;
+          background: transparent;
+        }
+      }
+
+      input[type="radio"] {
+        opacity: 0;
+      }
+
+      input[type="radio"] {
+        margin: 0px;
+
+        &:checked+label::after {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: 4px;
+          display: inline-block;
+          font-size: 11px;
+          width: 10px;
+          height: 10px;
+          background-color: $primary;
+          -moz-border-radius: 50px;
+          -webkit-border-radius: 50px;
+          border-radius: 50px;
+        }
+
+        &:checked+label::before {
+          border-color: $primary;
+        }
+      }
+    }
+  }
+}
+
+// chat cards
+
+.chat-card {
+  @include flex(flex-end, null, column);
+  gap: 8px;
+
+  .chat-time {
+    color: $neutral-70;
+    letter-spacing: 0.048px;
+    @include font-size(12, 16, 700);
+    text-align: right;
+    align-self: flex-end;
+  }
+
+  .chat-pdf-preview {
+    border-radius: 8px;
+    padding: 12px;
+    @include flex(center, null, null);
+    gap: 16px;
+    max-width: 700px;
+    width: fit-content;
+
+    .chat-pdf-preview-icon {
+      @include box(40px, 40px);
+      min-width: 40px;
+      border-radius: 4px;
+      padding: 6px;
+      background: $neutral-80;
+
+      img {
+        width: 100%;
+        height: 100%
+      }
+    }
+  }
+
+  p {
+    color: $neutral-30;
+    @include font-size(14, 20, 400);
+    letter-spacing: 0.175px;
+  }
+
+  .chat-pdf-preview-img {
+    @include box(80px, 80px);
+
+    img {
+      width: 100%;
+      height: 100%
+    }
+  }
+
+  .chat-card-receiver,
+  .chat-card-sender {
+    border-radius: 8px;
+    padding: 8px 16px;
+    max-width: 700px;
+    width: fit-content;
+    display: inline-block;
+  }
+
+  .chat-card-receiver {
+    background: $neutral-80;
+    align-self: flex-start;
+  }
+
+  .chat-pdf-preview-receiver {
+    background: $neutral-80;
+  }
+
+  .chat-pdf-preview-sender {
+    background: $white
+  }
+
+  .chat-card-sender {
+    background: $white;
+    align-self: flex-end;
+  }
+}
+
+// cms pages
+
+.cms-section {
+
+  h3,
+  p,
+  li {
+    margin-bottom: 15px;
+  }
+
+  li,
+  p {
+    @include font-size(16, 24, 400);
+    color: $neutral-30;
+  }
+
+  h3 {
+    @include font-size(18, 28, 700);
+    color: $black-30;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 25px;
+    margin-bottom: 20px;
+  }
+}
+
+.service-cards {
+  @include flex(center, null, null);
+  flex-wrap: wrap;
+  gap: 9px;
+
+  li {
+    padding: 8px;
+    border-radius: 4px;
+    background: $white;
+
+    h6 {
+      color: $neutral-70;
+      letter-spacing: 0.048px;
+      @include font-size(12, 16, 700);
+    }
+
+    span {
+      color: $neutral-40;
+      @include font-size(12, 16, 700);
+      letter-spacing: 0.048px;
+    }
+  }
+}
+
+
+.editor-wrapper {
+  @include flex(center, space-between, null);
+  flex-wrap: wrap;
+  gap: 10px;
+  border-radius: 4px;
+  border: 1px solid $neutral-70;
+  padding: 4px 8px;
+  background: $neutral-90;
+
+  input {
+    border: none;
+    background: $neutral-90;
+    @include font-size(20, 32, 400);
+    opacity: 1;
+    width: 190px;
+    outline: none;
+
+    &::placeholder {
+      color: $neutral-30;
+    }
+  }
+
+  button {
+    transition: all 0.3s ease;
+    @include box(35px, 35px);
+    border-radius: 100%;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}
+
+textarea {
+  resize: none;
+}

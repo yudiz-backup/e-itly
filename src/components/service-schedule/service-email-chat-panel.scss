@@ -1,0 +1,31 @@
+.email-box {
+  .tox.tox-tinymce {
+    height: 60px !important;
+    transition: height 0.35s ease;
+  }
+
+  .tox-editor-header {
+    padding: 0 !important;
+  }
+  .tox-editor-header,
+  .tox .tox-statusbar {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+  }
+  &.active {
+    .tox.tox-tinymce {
+      height: 300px !important;
+    }
+    .tox-editor-header {
+        padding: 4px 0 !important;
+    }
+    .tox-editor-header,
+    .tox .tox-statusbar {
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+      transition: all 0.5s ease !important;
+    }
+  }
+}

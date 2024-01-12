@@ -1,0 +1,20 @@
+@import "../../assets/scss/helper/variables";
+@import "../../assets/scss/helper/mixin/";
+@import "../../assets/scss/helper/media-query";
+
+.heading {
+  letter-spacing: 0.08px;
+  text-transform: capitalize;
+  &-medium {
+    color: $neutral-10;
+    @include font-size(20, 32, 400);
+  }
+  &-small{@include font-size(16, 24, 400);}
+  &-large {
+    color: $black;
+    @include font-size(32, 48, 400);
+    @include media-max("md") {
+      font-size: 25px;
+    }
+  }
+}

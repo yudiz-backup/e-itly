@@ -1,0 +1,37 @@
+@import "../mixin";
+@import "../variables";
+@import "../media-query";
+
+.tabs-list                {
+.vertical-tabs            {display: flex;gap: 20px;.tab-content{flex: 1;background-color: $neutral-90;padding: 20px;border-radius: 8px;}}
+.nav-pills                { background-color: $neutral-90;
+.nav-item                 { .nav-link{padding: 12px;color: $black-30;@include font-size(16, 24, 400);&.active{background-color: $neutral-80;}}}}
+.nav-tabs                 { border-bottom: 1px solid $white-10; background: transparent; gap: 24px;
+.nav-link                 {   @include font-size(16, 24, 400); color: $neutral-60; margin: 0; padding: 0 0 12px 0; border: none;
+&:hover, &:focus          { border: none; color: $primary;   }
+&.active                  { color: $primary; border: none; border-bottom: 2px solid $primary;background-color: transparent;} }
+@include media-max("md")  {.nav-link {font-size: 14px;padding-bottom: 8px;}}}
+.tab-content              { padding-top: 32px;}
+}
+
+.bottom-border            { padding-bottom: 20px; border-bottom: 2px solid $white-10; margin-bottom: 20px;}
+.flex-between             {@include flex(center,space-between,null)}
+
+.r-btn-cls                {
+&.btn                     { color: $neutral-30 !important; @include font-size(16, 24, 400); background-color: transparent !important; border: none;
+&::after                  {display: none;}
+&:active,
+&:hover                   {background-color: transparent !important;img{filter: none;}
+&::before                 {display: none;} }}
+}
+.attach-document          {@include flex(center,null,null);cursor: pointer;color: $black-30;@include font-size(16, 24, 400); svg{color: $primary;}
+input                     {opacity: 0;position: absolute;z-index: -1;}.upload-button{margin-right: 5px;}}
+
+
+.mb-12                    {margin-bottom: 12px;}
+.mb-20                    {margin-bottom: 20px;}
+.mb-22                    {margin-bottom: 22px;}
+.mb-24                    {margin-bottom: 24px;}
+.pt-24                    {padding-top: 24px !important;}
+.height-100               {height: 100px;}
+.height-152               {height: 152px !important;}

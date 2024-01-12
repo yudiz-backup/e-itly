@@ -1,0 +1,28 @@
+@import "../helper/mixin/";
+@import "../helper/variables/";
+@import "../helper/media-query";
+
+%btn                              { @include font-size(14, 24, 700); border-radius: 4px; letter-spacing: 0.18px; text-transform: uppercase;border: 1px solid transparent;transition: all .3s;position: relative;overflow: hidden;z-index: 1; img{margin-right: 5px;}
+&:disabled                        {opacity: 0.7;}
+@include media-max("md")          {padding: 6px 25px;font-size: 13px;}
+&.btn-large                       {padding: 8px 12px; }
+&.btn-medium                      {padding: 4px 16px; }
+&:before 	                      { content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 100%; background: darken($primary, 10%); transition: all .3s; border-radius: 4px; z-index: -1;}
+
+&:hover 						 {color: $white;img{@include iconWhite()}&:before {width: 100%}}}
+
+.btn-primary                     {@extend %btn;color: $white;background: $primary;}
+
+.btn-outline                     { @extend %btn; color: $primary; background: $neutral-5; border: 1px solid $primary;
+
+&:before 						 {background-color: $primary}}
+
+// Chips
+.chips                          {color: $neutral-50;border-radius: 8px; border: 1px solid $neutral-100; background: $neutral-90; display: inline-flex; padding: 4px 8px; justify-content: center; align-items: center; gap: 4px;button{color: $neutral-50;}
+
+.badge                          { padding: 0;background-color: transparent !important;color: $neutral-50;
+    &-large{@include font-size(14, 20, 400);letter-spacing: 0.175px; }
+    &-medium{@include font-size(10, 14, 400);letter-spacing: 0.04px;}
+}}
+.filter-btn                      {position: relative;overflow:visible;
+&::after                        { content: ""; position: absolute; right: -5px; @include box(10px,10px); top: -5px;left: inherit; background-color: $primary; border-radius: 100%;}}

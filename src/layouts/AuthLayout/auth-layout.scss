@@ -1,0 +1,33 @@
+@import "../../assets/scss/helper/mixin";
+@import "../../assets/scss/helper/variables";
+@import "../../assets/scss/helper/media-query";
+
+.auth-layout {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  padding: 132px;
+  @include flex(center, flex-end, null);
+  @include bgImage("../../assets/images/login.jpg");
+  &-card {
+    padding: 64px 32px;
+    border-radius: 8px;
+    background: $white;
+    max-width: 429px;
+    width: 100%;
+    .form-floating {
+      .form-control:not(:placeholder-shown) ~ label::after {
+        background: transparent !important;
+      }
+    }
+  }
+  @include media-max("lg") {
+    padding: 50px;
+  }
+  @include media-max("md") {
+    padding: 25px;
+    &-card {
+      padding: 35px 20px;
+    }
+  }
+}

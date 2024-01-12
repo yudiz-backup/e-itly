@@ -1,0 +1,49 @@
+@import "../../../assets/scss/helper/mixin";
+@import "../../../assets/scss/helper/variables";
+
+.services {
+  padding: 8px 0 10px 0;
+
+  .table {
+    thead th {
+      &:first-child {
+        width: 300px;
+      }
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(9) {
+        width: 100px;
+        text-align: center;
+      }
+      &:nth-child(8) {
+        width: 80px;
+      }
+    }
+    tbody td {
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(7) {
+        text-align: center;
+      }
+    }
+  }
+  .block-m-details-w {
+    background-color: $neutral-90;
+    box-shadow: none;
+    .card {
+      border: none;
+      padding: 12px 0;
+      .card-title {
+        color: $primary-10;
+        @include font-size(14, 20, 400);
+        letter-spacing: 0.175px;
+        margin-bottom: 0;
+      }
+      .card-text {
+        color: $primary;
+        @include font-size(16, 24, 400);
+      }
+    }
+  }
+}

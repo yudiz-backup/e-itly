@@ -1,0 +1,47 @@
+@import "../helper/variables";
+
+@media (min-width: 1200px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: $white;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $blue-10;
+    border-radius: 3px;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $blue-10;
+  }
+}
+
+body .scrollarea {
+  .scrollbar-container {
+    opacity: 1;
+    .scrollbar {
+      background: $blue-10 !important;
+      border-radius: 10px;
+      width: 6px !important;
+      opacity: 0;
+    }
+    &.active,
+    &:hover {
+      background: $white-10;
+      opacity: 1 !important;
+      border-radius: 8px;
+      width: 7px !important;
+    }
+  }
+  &:hover .scrollbar-container {
+    opacity: 1 !important;
+    .scrollbar {
+      opacity: 1;
+    }
+  }
+}

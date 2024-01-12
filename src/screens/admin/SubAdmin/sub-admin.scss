@@ -1,0 +1,16 @@
+@import "../../../assets/scss/helper/variables";
+.sub-admin {
+  &.add {
+    table {
+      thead th {
+        &:nth-last-child(2),
+        &:last-child {
+          text-align: left;
+        }
+      }
+      tbody td > div {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}

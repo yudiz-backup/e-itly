@@ -1,0 +1,8 @@
+@import "../../assets/scss/helper/mixin";
+@import "../../assets/scss/helper/variables";
+
+.user-info            {
+.dropdown-toggle      { width: 40px; padding: 0; height: 40px; border-radius: 100%; border: none;
+&::after              { display: none;}img { max-width: 100%;border-radius: 100%; height: auto;}}
+.dropdown             { z-index: 9;}
+.user-dropdown        { transform: translate(0px, 55px) !important; right: 0 !important; button { border-radius: 0;text-align: left;width: 100%;}}}

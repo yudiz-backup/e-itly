@@ -1,0 +1,171 @@
+@import "../helper/mixin/";
+@import "../helper/variables/";
+.dnd-wrapper {
+  border-radius: 8px;
+  background: $neutral-90;
+  padding: 24px 20px;
+  height: 100%;
+  &-head {
+    @include flex(flex, space-between, null);
+    margin-bottom: 28px;
+    border-bottom: 1px solid $white-10;
+    padding-bottom: 5px;
+    .heading-small {
+      color: $primary;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 1px;
+        background-color: $primary;
+      }
+    }
+  }
+  &-header {
+    margin-bottom: 20px;
+  }
+  &-scroll {
+    height: 100%;
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 10px;
+    &.terms-conditions-scroll {
+      max-height: 550px;
+    }
+  }
+  &-container {
+    height: calc(600px - 40px);
+    overflow-y: auto;
+    border-radius: 5px;
+    .accordion-body {
+      padding: 24px 20px;
+    }
+    &.active {
+      max-height: 540px;
+      &-container{
+        padding: 10px;
+
+      }
+      // background-color: $neutral-80;
+      .dnd-card-agent {
+        padding-right: 80px;
+      }
+    }
+  }
+  &-upload-box {
+    @include flex(center, center, null);
+    div {
+      text-align: center;
+      img {
+        width: 174.694px;
+        height: 174.999px;
+        margin-bottom: 10px;
+      }
+      h5 {
+        color: $black-30;
+        @include font-size(20, 32, 400);
+      }
+    }
+  }
+}
+.dnd-card-actions {
+  position: absolute;
+  right: 20px;
+  gap: 5px;
+  display: flex;
+  button {
+    border-radius: 100%;
+    color: $neutral-50;
+    transition: all 0.3s;
+    @include box(30px,30px);
+    @include flex(center,center,null);
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+    
+  }
+}
+.dashed-wrapper {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='15' ry='15' stroke='%23C5C4D4FF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='83' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 15px;
+  height: 100%;
+  padding: 16px;
+}
+.dnd-card.card {
+  border-radius: 4px;
+  background: $white;
+  padding: 16px;
+  box-shadow: $shadow;
+  position: relative;
+  width: 100%;
+  border: 1px solid transparent;
+  margin-bottom: 10px;
+  &.active {
+    border: 1px dashed $primary;
+  }
+  .card-img-top {
+    @include box(108px, 108px);
+    border-radius: 8px;
+  }
+  .card-title {
+    color: $black-30;
+    @include font-size(16, 24, 400);
+  }
+  .card-body {
+    padding-left: 0;
+    .card-text {
+      color: $neutral-50;
+      @include font-size(14, 20, 400);
+      letter-spacing: 0.175px;
+    }
+  }
+  .card-header {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+  .btn-drag {
+    position: absolute;
+    right: 16px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px !important;
+    @include Transition(0.3s);
+    @include box(35px, 35px);
+    @include flex(center, center, null);
+
+    &:hover {
+      background-color: $primary;
+      img {
+        @include iconWhite();
+      }
+    }
+  }
+  &.dnd-service-card {
+    .card-header {
+      @include flex(center, null, null);
+      gap: 10px;
+      width: calc(100% - 75px);
+      .card-title {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.dnd-card-agent {
+    .card-text {
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+      img {
+        opacity: 0.6;
+        filter: brightness(0);
+        margin-right: 5px;
+        @include box(20px, 20px);
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "../helper/mixin/";
+@import "../helper/variables/";
+body .accordion {
+  &-item {
+    border: none;
+    .accordion-button {
+      background: $neutral-90;
+      padding: 16px 20px;
+      color: $neutral-10;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      @include font-size(20, 32, 400);
+      img {
+        margin-right: 10px;
+      }
+      &::after {
+        @include bgImage("/src/assets/images/icons/arrow-drop-down.svg");
+        background-size: 15px;
+        filter: brightness(0);
+      }
+      &[aria-expanded="false"] {
+        border-radius: 8px !important;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &-collapse {
+    border-radius: 0;
+    &.show {
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      background: $neutral-90;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "../../../assets/scss/helper/variables";
+
+.terms-conditions {
+  .editor-wrapper input {
+    width: 210px;
+  }
+  .block-m-details-w {
+    background-color: $neutral-90;
+    box-shadow: none;
+  }
+}

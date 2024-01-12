@@ -1,0 +1,50 @@
+@import "../../../assets/scss/helper/mixin";
+@import "../../../assets/scss/helper/variables";
+.event {
+  .table thead th {
+    &:nth-child(5),
+    &:nth-child(4) {
+      width: 150px;
+    }
+    &:last-child {
+      width: 160px;
+    }
+  }
+  form {
+    .form-floating input[type="textarea"] {
+      height: 152px !important;
+    }
+  }
+}
+.event-details {
+  &-cards {
+    @include flex(center, null, null);
+    gap: 16px;
+    margin-bottom: 36px;
+    .form-card {
+      height: 100%;
+      .card-text {
+        line-height: normal;
+      }
+    }
+  }
+  &-content {
+    margin-bottom: 30px;
+    h5 {
+      color: $black-30;
+      letter-spacing: 0.175px;
+      text-transform: uppercase;
+      @include font-size(14, 24, 700);
+      margin-bottom: 10px;
+    }
+    p {
+      color: $black-30;
+      word-break: break-all;
+      @include font-size(16, 24, 400);
+    }
+  }
+  .block-m-details-w {
+    background: $neutral-90;
+    box-shadow: $shadow;
+  }
+}

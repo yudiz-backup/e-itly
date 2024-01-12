@@ -1,0 +1,115 @@
+@import "../helper/mixin";
+@import "../helper/variables";
+
+body {
+  .react-datepicker-wrapper {
+    width: 100%;
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid $neutral-70;
+      color: $neutral-10;
+      border-radius: 4px;
+      @include font-size(14, 24, 400);
+      outline: none;
+    }
+  }
+  .time-picker {
+    .react-datepicker {
+      &__input-container {
+        &::before {
+          content: "AM/PM";
+          width: fit-content;
+          background: none;
+          color: $neutral-50;
+          letter-spacing: 0.175px;
+          @include font-size(14, 24, 400);
+        }
+      }
+      &__header {
+        padding: 8px;
+      }
+    }
+  }
+  .react-datepicker {
+    border: none;
+    width: 100%;
+    box-shadow: $shadow;
+    border: none;
+    &__triangle {
+      display: none;
+    }
+    &__time-list-item {
+      &:hover,
+      &--selected {
+        background-color: $primary !important;
+        color: $white !important;
+      }
+    }
+    &__input-container {
+      &::before {
+        content: "";
+        @include bgImage("/src/assets/images/icons/calendar.svg");
+        position: absolute;
+        opacity: 0.5;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        @include box(20px, 21px);
+        filter: brightness(0);
+      }
+    }
+    &-popper {
+      z-index: 99 !important;
+    }
+    &__header {
+      padding: 27px 0;
+    }
+    &__day-name,
+    &__day,
+    &__day--today,
+    &__time-name {
+      color: $black;
+      display: inline-block;
+      width: 45px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      margin: 0.166rem;
+      border-radius: 4px;
+      background: $white;
+      transition: all 0.3s;
+      font-weight: 500;
+      cursor: pointer;
+      &--today{
+        background-color: $white-10;
+      }
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      } 
+    }
+    &__day--selected {
+      background-color: $primary;
+      color: $white;
+    }
+    &__day--disabled {
+      background-color: $neutral-105;
+      color: $neutral-55;
+      cursor: not-allowed;
+    }
+    &__day--outside-month {
+      color: $neutral-70;
+    }
+    &__current-month {
+      margin-bottom: 5px;
+    }
+    &__navigation {
+      top: 15px;
+    }
+    &__time-list-item {
+      font-weight: 400;
+    }
+  }
+}

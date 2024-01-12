@@ -1,0 +1,92 @@
+@import "../helper/mixin";
+@import "../helper/variables";
+@import "../helper/media-query";
+
+body {
+  .offcanvas {
+    padding: 40px 24px;
+    width: 417px !important;
+
+    &-header {
+      padding: 0 0 16px 0;
+      border-bottom: 1px solid $white-10;
+      position: relative;
+      .offcanvas-title {
+        color: $black-30;
+        @include font-size(24, 32, 400);
+      }
+      .btn-close {
+        padding: 0;
+        opacity: 1;
+        margin: 0;
+        @include box(35px, 35px);
+        border-radius: 100%;
+        box-sizing: border-box;
+        background-size: 15px;
+        transition: all 0.3s;
+        &:hover {
+          background-color: $white-10;
+        }
+      }
+    }
+    &-body {
+      padding: 24px 10px 0 0;
+    }
+    &-footer {
+      background-color: $white;
+      position: absolute;
+      padding: 15px 24px 24px 24px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+    @include media-max("md") {
+      padding: 25px 20px;
+      &-header {
+        padding-bottom: 8px;
+        .offcanvas-title {
+          font-size: 20px;
+        }
+      }
+      &-body {
+        padding-top: 10px;
+      }
+    }
+  }
+  .filter-sidebar {
+    &-head {
+      margin-bottom: 8px;
+      .search-box {
+        margin-bottom: 20px;
+      }
+      h5 {
+        color: $black-30;
+        @include font-size(16, 24, 400);
+        margin-bottom: 15px;
+      }
+      p {
+        color: $neutral-50;
+        @include font-size(14, 20, 400);
+        letter-spacing: 0.175px;
+      }
+    }
+    &-items {
+      height: fit-content;
+      padding-bottom: 25px;
+      .mb-3 {
+        margin-bottom: 0 !important;
+        .checkbox-w {
+          padding: 8px;
+        }
+      }
+    }
+  }
+  .addEvent-sidebar {
+    .filter-sidebar-head {
+      padding-bottom: 30px;
+      h5 {
+        margin-bottom: 4px;
+      }
+    }
+  }
+}

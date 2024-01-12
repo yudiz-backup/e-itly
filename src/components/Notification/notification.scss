@@ -1,0 +1,126 @@
+@import "../../assets/scss/helper/variables";
+@import "../../assets/scss/helper/mixin/";
+@import "../../assets/scss/helper/media-query";
+
+.notification-items {
+  @include flex(null, null, column);
+  gap: 12px;
+}
+.notification-item {
+  position: relative;
+  .notification-checkbox {
+    position: absolute;
+    @include box(100%, 100%);
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .notification-checkbox:checked ~ &-content {
+    background: $neutral-80;
+    &::before {
+      width: 10px;
+    }
+  }
+  &[class*="update"] {
+    .notification-item-content {
+      background: $neutral-80;
+    }
+  }
+  &.status-change {
+    .notification-item-content {
+      background-color: $green-5;
+      &::before {
+        background-color: $green30;
+      }
+    }
+  }
+  &[class*="CNF"] {
+    .notification-item-content {
+      background-color: $green-5;
+      &::before {
+        background-color: $green30;
+      }
+    }
+  }
+  &[class*="D"] {
+    .notification-item-content {
+      background-color: $red-5;
+      &::before {
+        background-color: $red-10;
+      }
+    }
+  }
+  &[class*="PP"] {
+    .notification-item-content {
+      background-color: $yellow-5;
+      &::before {
+        background-color: $yellow-10;
+      }
+    }
+  }
+  &[class*="PAA"] {
+    .notification-item-content {
+      background-color: $yellow-5;
+      &::before {
+        background-color: $yellow-10;
+      }
+    }
+  }
+  &[class*="FP"] {
+    .notification-item-content {
+      background-color: $yellow-5;
+      &::before {
+        background-color: $yellow-10;
+      }
+    }
+  }
+  &-content {
+    background: $neutral-80;
+    @include flex(center, null, null);
+    gap: 16px;
+    padding: 8px 32px 8px 16px;
+    border-radius: 4px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      right: 15px;
+      width: 0;
+      height: 10px;
+      background-color: $primary;
+      border-radius: 100%;
+    }
+  }
+  &-icon {
+    border-radius: 100%;
+    background: $white;
+    @include box(40px, 40px);
+    @include flex(center, center, null);
+    img {
+      width: 20px;
+      height: auto;
+    }
+  }
+  &-title {
+    color: $neutral-30;
+    letter-spacing: 0.175px;
+    @include font-size(14, 20, 400);
+    flex: 1;
+  }
+  @include media-max("md") {
+    &-icon {
+      @include box(35px, 35px);
+      img {
+        width: 22px;
+      }
+    }
+  }
+
+  // .notification-checkbox:checked ~ &-content &-icon {
+  //   background: $white;
+  //   border-color: $white;
+  //   img {
+  //     filter: brightness(0) invert(1);
+  //   }
+  // }
+}

@@ -1,0 +1,227 @@
+@import "../../../../assets/scss/helper/mixin";
+@import "../../../../assets/scss/helper/media-query";
+@import "../../../../assets/scss/helper/variables";
+.chat {
+  &-send-preview {
+    background: $white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    @include flex(center, null, null);
+    gap: 10px;
+    width: 100%;
+    &-img {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      border-radius: 4px;
+      background: $neutral-80;
+      padding: 8px;
+      @include flex(center, center, null);
+      p {
+        text-transform: capitalize;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        border-radius: 100%;
+        width: 22px;
+        height: 22px;
+        transition: all 0.3s ease;
+        background-color: $white;
+        @include flex(center, center, null);
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+    &-created {
+      width: 50px;
+      height: 100px;
+      border-radius: 4px;
+      background: $white-10;
+      @include flex(center, center, null);
+      cursor: pointer;
+      svg {
+        width: 20px;
+        height: 20px;
+        color: $primary;
+      }
+    }
+  }
+  &-send-input {
+    // border-radius: 8px;
+    // background: $white;
+    position: relative;
+    // padding: 5px 8px;
+    .form-group {
+      @include flex(center, space-between, null);
+    }
+    input {
+      border: none;
+      color: $neutral-50;
+      letter-spacing: 0.175px;
+      @include font-size(14, 20, 400);
+    }
+  }
+
+    &-buttons {
+      @include flex(center, null, null);
+      gap: 10px;
+      .attach {
+        @include box(35px, 35px);
+        @include Transition(0.3s);
+        position: relative;
+        border-radius: 4px;
+        @include flex(center, center, null);
+        cursor: pointer;
+        color: $neutral-50;
+        input {
+          position: absolute;
+          opacity: 0;
+          height: 100%;
+          width: 100%;
+          z-index: -1;
+        }
+        &:hover {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+    }
+  &-header {
+    padding-bottom: 16px;
+    &-day {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 1px;
+        background-color: $neutral-100;
+      }
+      span {
+        background-color: $white-20;
+        position: relative;
+        color: $neutral-65;
+        padding: 0 20px;
+        letter-spacing: 0.048px;
+        @include font-size(12, 16, 700);
+        padding: 0 15px;
+      }
+    }
+    .chat-wrapper-item {
+      padding: 0;
+      gap: 8px;
+    }
+  }
+  &-wrapper {
+    height: 100%;
+    &-container {
+      .scrollarea {
+        margin-bottom: 20px;
+        height: 505px;
+      }
+    }
+    .bg-wrapper {
+      height: 100%;
+      padding: 16px 20px;
+      background-color: $white-20;
+    }
+    &-list {
+      .scrollarea {
+        height: 660px;
+        &-content {
+          @include flex(center, null, column);
+          gap: 8px;
+          width: 100%;
+        }
+      }
+    }
+    &-item {
+      border-radius: 8px;
+      background: $white-20;
+      padding: 10px 16px;
+      width: 100%;
+      @include flex(center, null, null);
+      gap: 16px;
+      cursor: pointer;
+      &.active {
+        background-color: $neutral-80;
+      }
+      img {
+        border-radius: 40px;
+        @include box(38px, 38px);
+      }
+      .username {
+        color: $black;
+        @include font-size(16, 24, 400);
+      }
+      p {
+        color: $neutral-65;
+        @include font-size(12, 16, 700);
+        letter-spacing: 0.048px;
+      }
+      .user-id {
+        color: $primary;
+        @include font-size(16, 24, 400);
+      }
+    }
+  }
+  // .chat-card {
+  //   .chat-time {
+  //     color: $neutral-70;
+  //     letter-spacing: 0.048px;
+  //     @include font-size(12, 16, 700);
+  //     text-align: right;
+  //     align-self: flex-end;
+  //   }
+  // }
+  
+  @include media-max("xxl") {
+    .chat-card {
+      max-width: 500px;
+    }
+  }
+}
+
+.chat-sender-receiver {
+  div {
+    align-self: flex-start;
+  }
+}
+
+.chat-sender-block {
+  div {
+    align-self: flex-end;
+  }
+}
+.chat-default {
+  background-color: $white-20;
+  height: 100%;
+  @include flex(center, center, null);
+  border-radius: 8px;
+  .heading {
+    font-weight: 600;
+  }
+}
+.refresh-icon {
+  background-color: $white;
+  border-radius: 5px;
+  @include box(40px, 40px);
+  img {
+    @include box(25px, 25px);
+  }
+}

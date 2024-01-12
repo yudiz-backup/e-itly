@@ -1,0 +1,9 @@
+@import "../helper/mixin/";
+@import "../helper/variables/";
+body {
+  .badge {           padding: 6px 12px; text-align: center; letter-spacing: 0.04px; @include font-size(12, 14, 400); border-radius: 6px;
+                      &.bg-success {   background-color: rgba(31, 168, 37, 0.14) !important;   color: #198a1e; } 
+                      &.bg-danger {   background-color: rgba(223, 94, 78, 0.16) !important;   color: #df5e4e; }
+                      &.bg-warning {   background-color: rgba(236, 155, 24, 0.14) !important;   color: #CF8711; }
+  }
+}

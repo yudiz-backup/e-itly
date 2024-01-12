@@ -1,0 +1,457 @@
+@import "../../../assets/scss/helper/mixin";
+@import "../../../assets/scss/helper/variables";
+.itinerary {
+  position: relative;
+  .table {
+    thead th {
+      &:first-child {
+        width: 150px;
+      }
+      &:nth-child(8) {
+        width: 160px;
+      }
+      &:nth-child(9) {
+        width: 140px;
+      }
+      &:last-child {
+        width: 160px;
+      }
+    }
+    .option-btns {
+      margin: 0 auto 0 auto;
+      .dropdown-menu {
+        padding: 0 !important;
+        inset: -32px 0 auto -130px !important;
+        width: fit-content;
+      }
+    }
+    tbody td {
+      &:nth-child(8) {
+        .status-option {
+          margin: 0 auto;
+        }
+      }
+      &:nth-child(9) {
+        .badge {
+          width: 100%;
+          word-break: break-all;
+          white-space: normal;
+        }
+      }
+    }
+  }
+  .participants-list {
+    .card {
+      cursor: pointer;
+      @include flex(center, space-between, row);
+      padding: 12px 16px;
+      border: 1px solid $neutral-70;
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+      &-title {
+        margin-bottom: 0;
+        color: $neutral-10;
+        @include font-size(15, 24, 400);
+        letter-spacing: 0.175px;
+      }
+    }
+    .participants-item {
+      position: relative;
+      .form-control {
+        border: 1px solid $neutral-70;
+        color: $neutral-10;
+        @include font-size(15, 24, 400);
+        letter-spacing: 0.175px;
+        padding: 12px 16px;
+        &::placeholder {
+          color: $neutral-10;
+        }
+      }
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+      button {
+        transition: all 0.3s;
+        border-radius: 100%;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        &:hover {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+    }
+  }
+  &-bc {
+    &-provider-name {
+      span {
+        color: $neutral-40;
+
+        @include font-size(14, 20, 400);
+
+        letter-spacing: 0.175px;
+      }
+      h5 {
+        color: $neutral-10;
+      }
+    }
+  }
+  .tab-content {
+    padding-top: 24px;
+  }
+  .tabs-list.step1 .nav-tabs {
+    width: 100%;
+  }
+
+  .tabs-list.day-list .nav-tabs {
+    max-width: 850px;
+    width: 100% !important;
+    gap: 16px;
+  }
+}
+.event-day-list {
+  .tabs-list {
+    .tab-content {
+      padding-top: 20px;
+    }
+    .nav-tabs {
+      width: calc(100% - 100px) !important;
+      gap: 16px;
+    }
+  }
+  .dnd-wrapper,
+  .dashed-wrapper {
+    height: fit-content;
+    padding: 16px 18px;
+  }
+}
+.tabs-list.day-list .nav-tabs {
+  width: 100%;
+  border: none;
+  .nav-link {
+    border: 1px solid $neutral-65;
+    padding: 0;
+    border-radius: 5px;
+    color: $neutral-30;
+    letter-spacing: 0.175px;
+    padding: 4px 16px;
+    @include font-size(14, 20, 400);
+    &:hover,
+    &.active {
+      border: 1px solid $primary;
+      background-color: $primary;
+      color: $white;
+    }
+  }
+}
+.itineraryStep2 {
+  .search-box {
+    &-select {
+      width: 220px;
+      .select .form-control.base-input {
+        padding: 2px 5px !important;
+        background-color: transparent;
+        border-color: $neutral-70;
+      }
+    }
+  }
+  .dnd-wrapper-container.active {
+    background-color: transparent;
+    padding: 0;
+  }
+  .itinerary-add-right {
+    margin-top: -30px;
+    .tabs-list {
+      .nav-tabs {
+        border-bottom: 1px solid $white-10;
+        background: transparent;
+        gap: 24px;
+        .nav-link {
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 400;
+          color: $neutral-60;
+          margin: 0;
+          padding: 0 0 12px 0;
+          border: none !important;
+          border-radius: 0;
+          &:hover {
+            background-color: transparent;
+          }
+
+          &.active {
+            color: $primary;
+            border: none;
+            border-bottom: 2px solid $primary !important;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+  .itinerary-tabs {
+    width: 100% !important;
+  }
+  .event-btn {
+    position: absolute;
+    right: 0;
+    top: -8px;
+  }
+  .version {
+    margin: 0;
+  }
+  .itineraryAgent-select .version {
+    margin-left: auto;
+  }
+  .accordion-body {
+    padding: 0;
+  }
+  .dnd-wrapper-scroll {
+    max-height: 490px;
+  }
+  // .dnd-wrapper {
+  //   height: auto;
+  // }
+  &-cost {
+    border-radius: 4px;
+    padding: 4px 8px;
+    background: $neutral-90;
+    li {
+      display: inline-block;
+      color: $neutral-30;
+      @include font-size(14, 20, 400);
+      letter-spacing: 0.175px;
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+    button {
+      color: $primary;
+      @include font-size(12, 16, 700);
+      letter-spacing: 0.18px;
+      text-transform: uppercase;
+      svg {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+.view-details {
+  padding-bottom: 70px;
+  &-header {
+    margin-bottom: 24px;
+  }
+  &-head {
+    @include flex(center, null, null);
+    flex-wrap: wrap;
+    gap: 12px;
+    button {
+      background-color: $primary;
+      border-radius: 4px !important;
+      img {
+        @include iconWhite();
+      }
+    }
+  }
+  &-cards {
+    border-radius: 8px;
+    background: $neutral-90;
+    padding: 24px 20px;
+    .card {
+      border-radius: 8px;
+      border: none;
+      padding: 8px 17px;
+      background-color: $white;
+      .card-title {
+        color: $neutral-50;
+        @include font-size(14, 20, 400);
+        margin-bottom: 0;
+        letter-spacing: 0.175px;
+      }
+      .card-text {
+        color: $neutral-40;
+      }
+      .heading-small {
+        color: $neutral-30;
+      }
+    }
+  }
+  .view-itinerary-footer {
+    z-index: 9;
+    background: $white;
+    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.16) inset;
+    padding: 16px 20px;
+    position: fixed;
+    left: 260px;
+    bottom: 0;
+    width: calc(100% - 260px);
+    @include flex(center, space-between, null);
+    flex-wrap: wrap;
+    ul {
+      width: 100%;
+      @include flex(center, space-between, null);
+      flex-wrap: wrap;
+      gap: 15px;
+      li {
+        @include font-size(20, 32, 400);
+        width: 300px;
+        position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          right: 0;
+          width: 2px;
+          height: 100%;
+          background-color: $neutral-40;
+        }
+        &:nth-last-of-type(1),
+        &:nth-last-of-type(2) {
+          width: fit-content;
+          &::before {
+            display: none;
+          }
+        }
+        span {
+          color: $primary;
+        }
+        p {
+          margin-left: 8px;
+          display: inline-block;
+          color: $neutral-30;
+          @include font-size(16, 24, 400);
+        }
+      }
+    }
+  }
+}
+.itineraryDateTime {
+  // height: calc(100vh - 18vh);
+  .tabs-list {
+    height: 100%;
+    .tab-content {
+      padding-top: 20px;
+    }
+    .vertical-tabs {
+      height: 100%;
+    }
+    .tab-pane,
+    .tab-content {
+      height: calc(100% - 15px);
+    }
+  }
+  div.nav {
+    .nav-item {
+      display: block;
+      width: 100%;
+      button {
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+        position: relative;
+        margin-left: 0.75rem;
+        opacity: 0.5;
+        transition: all 0.35s ease;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -0.5rem;
+          width: 1.5px;
+          height: 100%;
+          background-color: rgba(111, 107, 148, 0.3);
+          @include Transition(0.3s);
+        }
+        &.show {
+          opacity: 1;
+          &::before {
+            background-color: rgba(111, 107, 148, 1);
+          }
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .react-datepicker-wrapper input {
+    background-color: transparent;
+  }
+  h5 {
+    color: $black-30;
+    margin-bottom: 4px;
+    @include font-size(16, 24, 400);
+  }
+  p {
+    color: $neutral-50;
+    @include font-size(14, 20, 400);
+    letter-spacing: 0.175px;
+  }
+
+  .itinerary-chat-system {
+    height: 100%;
+    .itinerary-chat-w {
+      border-radius: 8px;
+      background: $neutral-90;
+    }
+    .tabs-list {
+      height: 100%;
+    }
+    .tab-content {
+      padding-top: 16px;
+      height: calc(100% - 6%);
+      .tab-pane {
+        height: 100%;
+      }
+    }
+    .chat-card {
+      .chat-pdf-preview {
+        max-width: 300px;
+      }
+    }
+  }
+  .accordion {
+    padding: 12px;
+    border-radius: 8px;
+    background: $neutral-90;
+    height: 100%;
+    .accordion-button {
+      padding: 12px 12px 0;
+      font-size: 16px;
+      line-height: 24px;
+      text-transform: capitalize;
+      .accordion-icon {
+        transform: rotate(0deg);
+        transition: transform 0.35s ease;
+      }
+      &.collapsed {
+        .accordion-icon {
+          transform: rotate(180deg);
+        }
+      }
+      &::after {
+        content: none;
+      }
+    }
+    &-collapse {
+      background: transparent !important;
+    }
+    &-body {
+      padding: 0;
+    }
+    &-item {
+      background-color: transparent;
+    }
+    &-body {
+      padding: 12px;
+    }
+  }
+  .chat-wrapper-container .scrollarea {
+    max-height: 500px;
+    min-height: 300px;
+  }
+}

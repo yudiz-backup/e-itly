@@ -1,0 +1,34 @@
+@import "../../assets/scss/helper/mixin";
+@import "../../assets/scss/helper/variables";
+.faq {
+  padding-top: 8px;
+  .accordion {
+    &-item {
+      border: none;
+      background-color: transparent;
+      .accordion-button {
+        // background-color: $white;
+        border: 1px solid $white-10;
+        color: $primary;
+        border-radius: 8px;
+        @include font-size(18, 28, 700);
+        &[aria-expanded="true"] {
+          background: $neutral-90;
+          border: 1px solid transparent;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        &.collapsed {
+          color: $neutral-30;
+          background: $neutral-90;
+          background-color: transparent !important;
+        }
+      }
+      > * {
+        color: $neutral-50;
+        @include font-size(14, 20, 400);
+        letter-spacing: 0.175px;
+      }
+    }
+  }
+}

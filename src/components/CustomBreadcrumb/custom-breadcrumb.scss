@@ -1,0 +1,8 @@
+@import "../../assets/scss/helper/mixin";
+@import "../../assets/scss/helper/variables";
+
+.custom-breadcrumb { padding: 10px 20px; background: $neutral-90; 
+  .breadcrumb-item { @include font-size(12, 16, 700); letter-spacing: 0.048px; 
+    &.active::before { content: ">"; font-weight: 700; color: $neutral-65; } } 
+    a { color: $neutral-65; @include font-size(12, 16, 700); letter-spacing: 0.048px; }
+}

@@ -1,0 +1,46 @@
+@import "../../assets/scss/helper/mixin";
+@import "../../assets/scss/helper/variables";
+@import "../../assets/scss/helper/media-query";
+.header {
+  position: relative;
+  height: 72px;
+  padding: 14px 20px;
+  gap: 8px;
+  background: $white;
+  @include flex(center, flex-end, null);
+  transition: all 0.3s;
+  &.active{
+    border-bottom: 1px solid $neutral-90;
+    filter: drop-shadow(0px 2px 6px rgba(197, 196, 212, 0.16));
+  }
+  .sidebar-btn {
+    display: none;
+  }
+  .nav {
+    gap: 10px;
+    a.active {
+      button {
+        background-color: $primary;
+        img {
+          @include iconWhite();
+        }
+      }
+    }
+  }
+  .search-bar {
+    border: none;
+    padding: 4px 0;
+    .input-group-text {
+      padding: 0;
+    }
+    .form-control {
+      padding: 0 5px;
+    }
+  }
+  @include media-max("md") {
+    padding: 10px;
+    .sidebar-btn {
+      display: block;
+    }
+  }
+}

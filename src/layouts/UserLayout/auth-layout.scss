@@ -1,0 +1,8 @@
+@import "../../assets/scss/helper/variables";
+@import "../../assets/scss/helper/media-query/";
+
+.user-layout          {overflow: hidden; background-color: $neutral-90; height: 100vh;  
+.main-container       {margin-left: 260px;height: 100%;overflow: hidden;@include media-max("md") {margin-left: 0;}
+.user-layout-inner    {overflow-y: auto;height: calc(100% - 80px);}
+.container-fluid      {padding: 12px 20px 18px 20px; background-color: $white;} }
+}

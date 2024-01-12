@@ -1,0 +1,25 @@
+@import "../helper/mixin/";
+@import "../helper/variables/";
+.table-responsive-xl {
+  overflow-x: auto;
+}
+.table                                {
+thead                                 {
+th                                    { background: $neutral-80; padding: 10px 8px; color: $neutral-50; @include font-size(14, 20, 400); letter-spacing: 0.175px; text-transform: capitalize;transition:all 0.3s ease-in-out;&:last-child{text-align: center;width: 150px;}
+&:nth-last-of-type(2)                 {text-align: center;}
+.sort-icon                            { margin:0 4px 0 0; img {@include box(12px, 12px);margin: 0; }}
+&:first-child                         { padding: 10px 24px; border-top-left-radius: 4px; border-bottom-left-radius: 4px;}
+&:last-child                          {border-top-right-radius: 4px;border-bottom-right-radius: 4px;}}}
+.table-empty-item .spinner-border     {color: $primary; }
+tr                                    {vertical-align: middle;}
+.table-empty-item                     {display: table-cell !important;padding-top: 15px;color: $neutral-50; @include font-size(14, 20, 400); }
+tbody {
+tr                                    {border-bottom: 1px solid $neutral-90;
+> *                                   { padding: 8px; color: $neutral-30; @include font-size(14, 20, 400); letter-spacing: 0.175px; box-shadow: none;}
+td                                    {&:first-child {padding: 10px 24px;}}}
+.user-img                             { @include box(45px, 45px);border-radius: 8px;}
+.actions                              { @include flex(center, center, null); width: fit-content; gap: 5px; margin: 0 auto;
+.table-icon                           { @include box(38px, 38px); border-radius: 100%; @include font-size(14, 24, 700); transition: all 0.3s ease; background-color: transparent; @include flex(center, center, null); svg{@include box(22px, 22px);color: $neutral-50;}
+
+&:hover                               { background-color: $primary; svg{color: $white;}}}}}
+}

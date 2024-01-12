@@ -1,0 +1,69 @@
+/*======================================================================
+ Table of Content:
+=================================
+  Global CSS
+=================================
+
+01. Base
+02. Variables
+03. Fonts
+04. Mixins
+05. Utils
+06. Media Query
+
+=================================
+  Components CSS
+=================================
+
+01. DND
+02. Modal
+03. Button
+04. Input
+05. Table
+06. OffCanvas
+07. Dropdown
+08. Accordion
+09. Scrollbar
+10. React Date Picker
+
+========================================================================*/
+
+@import "helper/base";
+@import "helper/variables";
+
+$theme-colors: (
+  "primary": $primary,
+);
+
+$font-sizes: (
+  1: $font-size-base * 2.5,
+  2: $font-size-base * 2,
+  3: $font-size-base * 1.75,
+  4: $font-size-base * 1.5,
+  5: $font-size-base * 1.25,
+  6: $font-size-base,
+  7: $font-size-sm,
+);
+
+/* The following line can be included in a src/App.scss */
+@import "bootstrap/scss/bootstrap";
+
+@import "helper/fonts";
+@import "helper/mixin";
+@import "helper/utils";
+@import "helper/media-query";
+
+// components
+
+@import "components/dnd";
+@import "components/modal";
+@import "components/button";
+// TODO: remove badge file
+@import "components/badge";
+@import "components/input";
+@import "components/table";
+@import "components/offcanvas";
+@import "components/dropdown";
+@import "components/accordion";
+@import "components/scrollbar";
+@import "components/react-datepicker";

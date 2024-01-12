@@ -1,0 +1,41 @@
+@import "../../../assets/scss/helper/mixin";
+@import "../../../assets/scss/helper/variables";
+@import "../../../assets/scss/helper/media-query";
+
+.auth-form {
+  .logo {
+    margin-bottom: 32px;
+  }
+  .active-description {
+    margin-bottom: 8px !important;
+  }
+  .auth-heading {
+    margin-bottom: 24px;
+  }
+  p {
+    color: $neutral-50;
+    @include font-size(16, 24, 400);
+  }
+  .form-link {
+    margin-bottom: 24px;
+    a {
+      color: $neutral-60;
+      letter-spacing: 0.175px;
+      text-transform: uppercase;
+      @include Transition(0.3s);
+      @include font-size(14, 24, 700);
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  @include media-max("md") {
+    .auth-heading {
+      margin-bottom: 15px;
+    }
+    .logo {
+      margin-bottom: 20px;
+      max-width: 120px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.supplier-management {
+  padding: 8px 0 10px 0;
+  .table {
+    thead th {
+      &:first-child {
+        width: 298px;
+      }
+      &:last-child {
+        width: 150px;
+      }
+    }
+  }
+}

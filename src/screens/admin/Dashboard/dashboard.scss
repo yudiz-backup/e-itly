@@ -1,0 +1,134 @@
+@import "../../../assets/scss/helper/mixin";
+@import "../../../assets/scss/helper/variables";
+.dashboard {
+  .dashboard-event-cards {
+    height: 100%;
+    .card {
+      border-radius: 8px;
+      background: $neutral-80;
+      border: none;
+      @include flex(null, space-between, row);
+      .card-title {
+        color: $primary-10;
+        @include font-size(48, 64, 400);
+      }
+      .card-text {
+        color: $neutral-30;
+        letter-spacing: 0.175px;
+        @include font-size(14, 20, 400);
+      }
+      img {
+        width: 230.427px;
+        height: 127.44px;
+      }
+      &.orange {
+        background: $red-orange;
+        .card-title {
+          color: $maroon;
+        }
+      }
+    }
+  }
+  &-head {
+    @include flex(center, space-between, null);
+    span {
+      color: var($black);
+      letter-spacing: 0.175px;
+      @include font-size(14, 24, 400);
+    }
+    .vr {
+      opacity: 1;
+      width: 3px;
+      background-color: $primary;
+    }
+    .year {
+      width: 80px !important;
+    }
+    .btn-primary{line-height: 20px;}
+  }
+  .dummyYearsOptions {
+    .form-control.base-input {
+      background-color: $primary !important;
+      div {
+        color: $white;
+      }
+    }
+    .select {
+      width: fit-content;
+     
+      .css-1nmdiq5-menu {
+        width: 140px;
+      }
+    }
+  }
+  .select {
+    width: 100px;
+     .form-control {
+      &.base-input {
+        background-color: transparent;
+        padding: 0 5px;
+        border-color: $primary;
+      }
+      div {
+        color: $primary;
+      }
+    }
+    .css-1nmdiq5-menu {
+      box-shadow: 0px 0px 8px 0px rgba(53, 40, 165, 0.16);
+      right: 0;
+      padding-block: 12px;
+      .focus-item {
+        color: $neutral-30;
+        background-color: $neutral-80;
+      }
+    }
+  }
+}
+.chart {
+  padding: 22px 12px;
+  background-color: $white;
+  height: 100%;
+  filter: drop-shadow(0px 2px 6px rgba(197, 196, 212, 0.16));
+  border-radius: 8px;
+  &-heading {
+    h2 {
+      color: $primary-10;
+      @include font-size(24, 32, 400);
+    }
+    h3 {
+      color: $neutral-30;
+      @include font-size(16, 24, 400);
+    }
+  }
+  &-buttons {
+    button {
+      padding: 8px 10px;
+      text-transform: capitalize;
+      @include font-size(14, 16, 700);
+      letter-spacing: 0.048px;
+      border: 1px solid $neutral-100;
+      color: $neutral-65;
+      border-radius: 4px 0 0 4px;
+      &.active {
+        color: $white;
+        background: $primary;
+        border-color: $primary;
+        border-radius: 0px 4px 4px 0px;
+        &.yearly {
+          border-radius: 4px 0px 0px 4px;
+        }
+      }
+    }
+  }
+  .chart-tooltip {
+    border-radius: 4px;
+    background: $neutral-80;
+    padding: 3px 8px;
+    p {
+      text-align: center;
+      color: $primary-10;
+      letter-spacing: 0.175px;
+      @include font-size(14, 20, 400);
+    }
+  }
+}

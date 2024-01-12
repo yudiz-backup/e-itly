@@ -1,0 +1,12 @@
+@import "../../assets/scss/helper/mixin";
+@import "../../assets/scss/helper/variables";
+@import "../../assets/scss/helper/media-query";
+.table-header {
+  .heading {
+    @include font-size(24, 32, 400);
+    color: $black-30;
+  }
+  .search-box {
+    width: 237px;
+  }
+}

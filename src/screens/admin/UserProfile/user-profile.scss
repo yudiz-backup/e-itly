@@ -1,0 +1,53 @@
+@import "../../../assets/scss/helper/mixin";
+@import "../../../assets/scss/helper/variables";
+.profile-upload {
+  position: relative;
+  width: 120px;
+  margin-bottom: 32px;
+
+  .profile-edit {
+    position: absolute;
+    z-index: 1;
+    bottom: -5px;
+    right: 11px;
+    @include box(112px, 112px);
+
+    input {
+      opacity: 0;
+      @include box(100%, 100%);
+    }
+    input + label {
+      @include box(36px, 36px);
+
+      border-radius: 100%;
+      cursor: pointer;
+      border: 2px solid $white;
+      background: $primary;
+      padding: 0;
+      @include flex(center, center, null);
+      position: absolute;
+      bottom: 0;
+      right: 10px;
+    }
+  }
+  .profile-preview {
+    @include box(112px, 112px);
+    position: relative;
+    border-radius: 100%;
+    div {
+      @include box(100%, 100%);
+      border-radius: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .defaultImage {
+      padding: 20px;
+      background: $white-10;
+      div {
+        border-radius: 0;
+        background-size: 100% 100%;
+      }
+    }
+  }
+}
